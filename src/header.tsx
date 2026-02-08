@@ -1,5 +1,7 @@
 import { NavLink } from "react-router"
 
+import { WebSiteName } from "./App"
+
 import Navbar from "./components/Navbar"
 
 
@@ -10,7 +12,7 @@ export default function Header() {
             <div className="header-inner header-container">
                 <div className="header-logo">
                     <h4>
-                        <NavLink to="/">Nikita Sych</NavLink>
+                        <NavLink to={`${WebSiteName}/`}>Nikita Sych</NavLink>
                     </h4>
                 </div>
 
