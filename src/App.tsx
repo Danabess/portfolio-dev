@@ -13,7 +13,7 @@ export default function App() {
         <>
             <Header></Header>
             <Routes>
-                <Route path={`${WebSiteName}/`} element={<Home />} />
+                <Route path={`${WebSiteName}/home`} element={<Home />} />
                 <Route path={`${WebSiteName}/projects`} element={<Projects />} />
                 <Route path={`${WebSiteName}/get-in-touch`} element={<GetInTouch />} />
             </Routes>
