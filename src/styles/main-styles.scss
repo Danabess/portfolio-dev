@@ -4,6 +4,8 @@ $secondary-color: rgb(240, 142, 128);
 
 $light-text-color: rgb(255, 255, 255);
 $dark-text-color: rgb(0, 0, 0);
+$input-background-color: rgb(250, 250, 250);
+$input-border-color: rgb(169, 169, 169);
 
 $container-max-width: 1280px;
 $container-side-padding: 20px;
@@ -118,7 +120,8 @@ a {
         }
     }
 
-    &.footer-link {
+    &.footer-link,
+    &.getintouch-link {
         $footer-transition-timing: calc($base-transition-timing - 0.15s);
 
         position: relative;
@@ -135,13 +138,25 @@ a {
             background-color: $secondary-color;
             transition: background-color $footer-transition-timing ease-in-out;
         }
+    }
 
+    &.footer-link {
         &:hover {
             color: $light-text-color;
         }
 
         &:hover::after {
             background-color: $light-text-color;
+        }
+    }
+
+    &.getintouch-link {
+        &:hover {
+            color: $dark-text-color;
+        }
+
+        &:hover::after {
+            background-color: $dark-text-color;
         }
     }
 }
@@ -242,6 +257,27 @@ section {
     &.small-padding-section {
         padding: 3.15rem 0;
     }
+}
+
+input[type="text"],
+textarea {
+    padding: 0.8rem;
+    margin: 0;
+    border: 0.1rem solid $input-border-color;
+    outline: none;
+    width: 100%;
+    background-color: $input-background-color;
+    font-family: $paragraphs-font;
+
+    &:focus {
+        outline: 0.15rem solid $dark-text-color;
+        outline-offset: 0.15rem;
+    }
+}
+
+textarea {
+    resize: vertical;
+    max-height: 25vh;
 }
 
 // ========== ========== ========== HEADER ========== ========== ==========
@@ -458,7 +494,7 @@ $accordion-border-width: 0.1rem;
     & .plus__horizontal-line,
     & .plus__vertical-line {
         position: absolute;
-        height: 2px;
+        height: 0.125rem;
         width: 100%;
         background-color: black;
     }
@@ -540,4 +576,40 @@ $accordion-border-width: 0.1rem;
 .getintouch-links-inner {
     width: fit-content;
     margin: 0 auto;
+}
+
+.getintouch-form {
+    & form {
+        width: 33rem;
+    }
+}
+
+.form-item {
+    &:not(:last-child) {
+        margin-bottom: 1.3rem;
+    }
+
+    & p {
+        padding-bottom: 0.3rem;
+    }
+
+    & span {
+        opacity: 0.7;
+    }
+}
+
+.field-list {
+    margin-bottom: 1.3rem;
+}
+
+.getintouch-links-inner {
+    & div:first-child {
+        margin-bottom: 5rem;
+    }
+}
+
+.getintouch-links-list {
+    & li:not(:last-child) {
+        margin-bottom: 0.5rem;
+    }
 }

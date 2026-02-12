@@ -11,11 +11,11 @@ function GetInTouch() {
                     <h2>GET IN TOUCH</h2>
                     <form action="#">
                         <div className="field-list">
-                            <FormItem isRequired>Name</FormItem>
-                            <FormItem isRequired>Email</FormItem>
-                            <FormItem>Message</FormItem>
+                            <FormItem isRequired inputName="UserName">Name</FormItem>
+                            <FormItem isRequired inputName="UserEmail">Email</FormItem>
+                            <FormItem textArea inputName="Message">Message</FormItem>
                         </div>
-                        <Button isPrimary onClick={() => { console.log('click') }}>Submit</Button>
+                        <Button isPrimary ClassName="p2" onClick={() => { console.log('click') }}>Submit</Button>
                     </form>
                 </div>
             </div>
@@ -23,11 +23,11 @@ function GetInTouch() {
                 <div className="getintouch-links-inner">
                     <div className="getintouch-social-links">
                         <h2>Social Links:</h2>
-                        <SocialLinksList linkClassName="getintouch-link"></SocialLinksList>
+                        <SocialLinksList listClassName="getintouch-links-list" linkClassName="getintouch-link p1"></SocialLinksList>
                     </div>
                     <div className="getintouch-phone">
                         <h2>Phone Number:</h2>
-                        <a href="#Phone" className="getintouch-link">+99-999-999-999</a>
+                        <a href="#Phone" className="getintouch-link p1">+99 999-999-999</a>
                     </div>
                 </div>
             </div>

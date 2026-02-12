@@ -18,7 +18,7 @@ function Footer() {
                         </div>
                         <div className="phone-number">
                             <p>Phone number:</p>
-                            <a href="#Phone" className="footer-link">+99-999-999-999</a>
+                            <a href="#Phone" className="footer-link">+99 999-999-999</a>
                         </div>
                     </div>
                 </div>
