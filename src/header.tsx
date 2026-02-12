@@ -12,7 +12,7 @@ export default function Header() {
             <div className="header-inner header-container">
                 <div className="header-logo">
                     <h4>
-                        <NavLink to={`${WebSiteName}/`}>Nikita Sych</NavLink>
+                        <NavLink to={`${WebSiteName}/home`}>Nikita Sych</NavLink>
                     </h4>
                 </div>
 

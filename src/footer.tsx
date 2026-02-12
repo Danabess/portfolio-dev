@@ -1,28 +1,14 @@
+import SocialLinksList from "./components/SocialLinksList";
+
+
 function Footer() {
-
-    const SocialLinksList = [
-        { name: "LinkedIn", href: "#LinkedIn" },
-        { name: "Instagram", href: "#Instagram" },
-        { name: "Telegram", href: "#Telegram" },
-        { name: "Twitter", href: "#Twitter" },
-        { name: "WhatsApp", href: "#WhatsApp" },
-    ]
-
     return (
         <footer className="footer main-background">
             <div className="footer-inner footer-container  p2">
                 <div className="footer-links">
                     <div className="footer-social-links">
                         <h4>Social Links</h4>
-                        <ul>
-                            {SocialLinksList.map((item, i) => {
-                                return (
-                                    <li key={i}>
-                                        <a href={item.href} className="footer-link">{item.name}</a>
-                                    </li>
-                                )
-                            })}
-                        </ul>
+                        <SocialLinksList linkClassName="footer-link"></SocialLinksList>
                     </div>
                     <div className="footer-contact-links">
                         <h4>Get In Touch</h4>

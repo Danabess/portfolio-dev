@@ -7,6 +7,7 @@
 
 html {
   min-width: 320px;
+  scrollbar-width: none;
 }
 
 [class*=-container] {
@@ -439,4 +440,24 @@ section.small-padding-section {
 }
 .contact-text p {
   margin: 2rem 0 3rem;
+}
+
+.getintouch-inner {
+  display: flex;
+}
+
+.getintouch-form,
+.getintouch-links {
+  width: 50%;
+}
+.getintouch-form h2,
+.getintouch-links h2 {
+  margin-bottom: 2rem;
+}
+
+.getintouch-form-inner,
+.getintouch-links-inner {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
 }/*# sourceMappingURL=main-styles.css.map */

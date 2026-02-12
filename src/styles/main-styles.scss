@@ -23,6 +23,7 @@ $base-transition-timing: 0.25s;
 
 html {
     min-width: 320px;
+    scrollbar-width: none;
 }
 
 [class*="-container"] {
@@ -517,4 +518,26 @@ $accordion-border-width: 0.1rem;
     & p {
         margin: 2rem 0 3rem;
     }
+}
+
+// ========== ========== ========== PROJECTS ========== ========== ==========
+
+// ========== ========== ========== GET IN TOUCH ========== ========== ==========
+.getintouch-inner {
+    display: flex;
+}
+
+.getintouch-form,
+.getintouch-links {
+    width: 50%;
+
+    & h2 {
+        margin-bottom: 2rem;
+    }
+}
+
+.getintouch-form-inner,
+.getintouch-links-inner {
+    width: fit-content;
+    margin: 0 auto;
 }
