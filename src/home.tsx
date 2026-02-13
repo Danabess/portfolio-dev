@@ -10,7 +10,7 @@ import Accordion from "./components/Accordion"
 import heroImg from "./assets/hero-main-img.jpg"
 
 
-function Home() {
+export default function Home() {
     return (
         <>
             <section className="hero main-background">
@@ -89,6 +89,3 @@ function Home() {
         </>
     )
 }
-
-
-export default Home;

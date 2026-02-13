@@ -5,6 +5,8 @@ import Home from './home';
 import Projects from './projects';
 import GetInTouch from './get-in-touch';
 import Footer from './footer';
+import CurrentItem from './CurrentItem';
+
 
 export const WebSiteName = "/portfolio-dev"
 
@@ -17,8 +19,9 @@ export default function App() {
             <Header></Header>
             <Routes>
                 <Route path={`${WebSiteName}/home`} element={<Home />} />
-                <Route index={true} path={`${WebSiteName}/projects`} element={<Projects />} />
-                <Route index={true} path={`${WebSiteName}/get-in-touch`} element={<GetInTouch />} />
+                <Route path={`${WebSiteName}/projects`} element={<Projects />} />
+                <Route path={`${WebSiteName}/projects/:video_id`} element={<CurrentItem />} />
+                <Route path={`${WebSiteName}/get-in-touch`} element={<GetInTouch />} />
             </Routes>
             {!hideFooter && <Footer></Footer>}
         </>

@@ -1,7 +1,7 @@
 import SocialLinksList from "./components/SocialLinksList";
 
 
-function Footer() {
+export default function Footer() {
     return (
         <footer className="footer main-background">
             <div className="footer-inner footer-container  p2">
@@ -30,5 +30,3 @@ function Footer() {
         </footer>
     )
 }
-
-export default Footer;

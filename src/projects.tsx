@@ -1,6 +1,7 @@
 import AllCasesList from "./components/AllCasesList";
 
-function Projects() {
+
+export default function Projects() {
     return (
         <section className="projects">
             <div className="projects-inner projects-container">
@@ -14,6 +15,3 @@ function Projects() {
         </section>
     )
 }
-
-
-export default Projects;

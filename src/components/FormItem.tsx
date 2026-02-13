@@ -1,4 +1,6 @@
-export default function FormItem({ className, children, isRequired, textArea, inputName }: { className?: string, children: any, isRequired?: boolean, textArea?: boolean, inputName?: string }) {
+export default function FormItem(
+    { className, children, isRequired, textArea, inputName }: { className?: string, children: any, isRequired?: boolean, textArea?: boolean, inputName?: string }
+) {
     return (
         <div className={`form-item ${className ? className : ''}`}>
             <label htmlFor={inputName}>

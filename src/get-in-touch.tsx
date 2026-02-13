@@ -3,7 +3,7 @@ import FormItem from "./components/FormItem";
 import SocialLinksList from "./components/SocialLinksList";
 
 
-function GetInTouch() {
+export default function GetInTouch() {
     return <section className="getintouch">
         <div className="getintouch-inner getintouch-container">
             <div className="getintouch-form">
@@ -34,6 +34,3 @@ function GetInTouch() {
         </div>
     </section>
 }
-
-
-export default GetInTouch;

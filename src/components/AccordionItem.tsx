@@ -1,4 +1,6 @@
-export default function AccordionItem({ children, title, selectedItemIndex, itemIndex, onClick }: { children: any, title: string, selectedItemIndex?: number | null, itemIndex: number, onClick?: React.MouseEventHandler<HTMLLIElement> }) {
+export default function AccordionItem(
+    { children, title, selectedItemIndex, itemIndex, onClick }: { children: any, title: string, selectedItemIndex?: number | null, itemIndex: number, onClick?: React.MouseEventHandler<HTMLLIElement> }
+) {
     return (
         <li id="AccordItm" className={`accordion-item ${selectedItemIndex == itemIndex ? "open" : ""}`} onClick={onClick}>
             <div className="accordion-item__title">
