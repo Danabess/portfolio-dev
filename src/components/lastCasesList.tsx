@@ -1,6 +1,6 @@
 import ProjectItem from './ProjectItem'
 
-import { AllCases } from './AllCasesList'
+import { AllCases } from './AllCases'
 
 
 export default function LastCasesList() {
@@ -10,7 +10,7 @@ export default function LastCasesList() {
                 <div className="all-cases-list">
                     {AllCases.map((item, i) => (
                         i < 3
-                            ? <ProjectItem key={i} itemID={item.title} imgSrc={item.image} title={item.title}>{item.description}</ProjectItem>
+                            ? <ProjectItem key={i} itemID={item.title} imgSrc={item.content} title={item.title}>{item.brief_description}</ProjectItem>
                             : undefined
                     ))}
                 </div>

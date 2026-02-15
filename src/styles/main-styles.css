@@ -482,6 +482,62 @@ textarea {
   gap: 0.6rem;
 }
 
+.current-item img {
+  width: 100%;
+  max-height: 40.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.current-item-title {
+  margin: 0.65rem 0 2.5rem;
+}
+.current-item-title h2 {
+  font-weight: bold;
+}
+
+.current-item-about-title {
+  margin: 7rem 0;
+}
+.current-item-about-title h1 {
+  font-weight: 400 !important;
+}
+
+.about-content-block {
+  display: flex;
+  gap: 0.65rem;
+}
+.about-content-block:not(:last-child) {
+  margin-bottom: 3.2rem;
+}
+
+.block-item {
+  flex: 1 30%;
+}
+.block-item .block-item-images {
+  margin-bottom: 0.65rem;
+}
+
+.split-images {
+  display: flex;
+  gap: 0.65rem;
+  height: auto;
+}
+.split-images .split-images-item {
+  display: flex;
+  flex: 1;
+}
+.split-images img {
+  width: 100%;
+  height: 100%;
+}
+
+.current-item-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rem;
+  padding: 0 10rem;
+}
 .getintouch-inner {
   display: flex;
 }
