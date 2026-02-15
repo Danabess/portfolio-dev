@@ -1,7 +1,7 @@
 import CurrentItem from "../CurrentItem"
 import Page404 from "../page404"
 
-import { AllCases } from "../components/AllCasesList";
+import { AllCases } from "./AllCases";
 
 
 export default function ItemExistCheck(video_id: string | undefined) {
