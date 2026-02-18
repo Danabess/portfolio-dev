@@ -1,6 +1,3 @@
-import CurrentItem from "../CurrentItem"
-import Page404 from "../page404"
-
 import { AllCases } from "./AllCases";
 
 

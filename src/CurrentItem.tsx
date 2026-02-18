@@ -1,4 +1,4 @@
-import { NavLink, useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { AllCases } from "./components/AllCases"
 
 import Page404 from "./page404";
@@ -43,11 +43,11 @@ export default function CurrentItem() {
                             {
                                 AllCases[i - 1]
                                     ? (
-                                        <NavLink to={`${WebSiteName}/projects/${AllCases[i - 1].title}`}>
+                                        <Link className="current-item-link" to={`${WebSiteName}/projects/${AllCases[i - 1].title}`}>
                                             <h3>
                                                 {AllCases[i - 1].title}
                                             </h3>
-                                        </NavLink>
+                                        </Link>
                                     )
                                     : ""
                             }
@@ -56,11 +56,11 @@ export default function CurrentItem() {
                             {
                                 AllCases[i + 1]
                                     ? (
-                                        <NavLink to={`${WebSiteName}/projects/${AllCases[i + 1].title}`}>
+                                        <Link className="current-item-link" to={`${WebSiteName}/projects/${AllCases[i + 1].title}`}>
                                             <h3>
                                                 {AllCases[i + 1].title}
                                             </h3>
-                                        </NavLink>
+                                        </Link>
                                     )
                                     : ""
                             }

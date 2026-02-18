@@ -27,7 +27,7 @@ export interface AllCasesType {
 
 export const AllCases: AllCasesType[] = [
     {
-        title: "Video_name_1",
+        title: "The Atlas Project",
         brief_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec dapibus orci. Cras maximus interdum est non interdum.q",
         full_description: "// VIDEO_DESCRIPTION // Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium convallis. Suspendisse potenti. Vivamus elementum tellus lacus, hendrerit egestas nisi feugiat vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas maximus fringilla pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere dolor in sagittis feugiat. Nunc iaculis enim felis, sit amet vehicula mi convallis sed. Sed ut auctor elit. Aliquam ac lectus eget purus scelerisque consectetur eu a est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur.",
         content: caseImg_1,
@@ -50,7 +50,7 @@ export const AllCases: AllCasesType[] = [
         }
     },
     {
-        title: "Video_name_2",
+        title: "The Lumen Project",
         brief_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec dapibus orci. Cras maximus interdum est non interdum.w",
         full_description: "// VIDEO_DESCRIPTION // Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium convallis. Suspendisse potenti. Vivamus elementum tellus lacus, hendrerit egestas nisi feugiat vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas maximus fringilla pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere dolor in sagittis feugiat. Nunc iaculis enim felis, sit amet vehicula mi convallis sed. Sed ut auctor elit. Aliquam ac lectus eget purus scelerisque consectetur eu a est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur.",
         content: caseImg_2,
@@ -73,7 +73,7 @@ export const AllCases: AllCasesType[] = [
         }
     },
     {
-        title: "Video_name_3",
+        title: "The Snow Project",
         brief_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec dapibus orci. Cras maximus interdum est non interdum.e",
         full_description: "// VIDEO_DESCRIPTION // Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium convallis. Suspendisse potenti. Vivamus elementum tellus lacus, hendrerit egestas nisi feugiat vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas maximus fringilla pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere dolor in sagittis feugiat. Nunc iaculis enim felis, sit amet vehicula mi convallis sed. Sed ut auctor elit. Aliquam ac lectus eget purus scelerisque consectetur eu a est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur.",
         content: caseImg_3,
@@ -96,7 +96,7 @@ export const AllCases: AllCasesType[] = [
         }
     },
     {
-        title: "Video_name_4",
+        title: "The Forest Project",
         brief_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec dapibus orci. Cras maximus interdum est non interdum.r",
         full_description: "// VIDEO_DESCRIPTION // Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium convallis. Suspendisse potenti. Vivamus elementum tellus lacus, hendrerit egestas nisi feugiat vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas maximus fringilla pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere dolor in sagittis feugiat. Nunc iaculis enim felis, sit amet vehicula mi convallis sed. Sed ut auctor elit. Aliquam ac lectus eget purus scelerisque consectetur eu a est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur.",
         content: caseImg_4,
@@ -119,7 +119,7 @@ export const AllCases: AllCasesType[] = [
         }
     },
     {
-        title: "Video_name_5",
+        title: "The Atlas Project - 2",
         brief_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec dapibus orci. Cras maximus interdum est non interdum.t",
         full_description: "// VIDEO_DESCRIPTION // Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium convallis. Suspendisse potenti. Vivamus elementum tellus lacus, hendrerit egestas nisi feugiat vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas maximus fringilla pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere dolor in sagittis feugiat. Nunc iaculis enim felis, sit amet vehicula mi convallis sed. Sed ut auctor elit. Aliquam ac lectus eget purus scelerisque consectetur eu a est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur.",
         content: caseImg_1,
