@@ -23,7 +23,7 @@ export default function App() {
                 <Route path={`${WebSiteName}/projects/:video_id`} element={<CurrentItem />} />
                 <Route path={`${WebSiteName}/get-in-touch`} element={<GetInTouch />} />
             </Routes>
-            {!hideFooter && <Footer></Footer>}
+            {/* {!hideFooter && <Footer></Footer>} */}
         </>
     )
 }

@@ -15,6 +15,10 @@ $paragraphs-font: "Space Mono", monospace;
 
 $base-transition-timing: 0.25s;
 
+:root {
+    --section-padding: 6.25rem;
+}
+
 // ========== ========== ========== BASIC STYLE ========== ========== ==========
 *,
 *::before,
@@ -33,6 +37,12 @@ html {
     padding-right: $container-side-padding;
     padding-left: $container-side-padding;
     margin: 0 auto;
+}
+
+body {
+    &:has(.hamburger-menu.open) {
+        overflow: hidden;
+    }
 }
 
 .uppercase {
@@ -261,7 +271,7 @@ button {
 }
 
 section {
-    padding: 6.3rem 0;
+    padding: var(--section-padding) 0;
 
     &.small-padding-section {
         padding: 3.15rem 0;
@@ -289,18 +299,38 @@ textarea {
     max-height: 25vh;
 }
 
+@media (max-width: 1200px) {
+    :root {
+        --section-padding: 3.25rem;
+    }
+}
+
 // ========== ========== ========== HEADER ========== ========== ==========
+:root {
+    --header-height: 6rem;
+}
+@media (max-width: 1200px) {
+    :root {
+        --header-height: 4rem;
+    }
+}
+
+header {
+    position: sticky;
+    height: var(--header-height);
+    top: 0;
+    z-index: 9999;
+}
+
 .header * {
     color: $light-text-color;
 }
 
-$header-padding-size: 2rem;
 .header-inner {
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: $header-padding-size;
-    padding-bottom: $header-padding-size;
 }
 
 .header-logo h4 {
@@ -311,6 +341,79 @@ $header-padding-size: 2rem;
     display: flex;
     gap: 6rem;
 }
+
+.hamburger-menu {
+    height: 1.625rem;
+    width: 2.5rem;
+
+    &.open {
+        & .hamburger-logo span {
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(0.5em, 0.4em);
+            }
+            &:nth-child(2) {
+                transform: scale(0);
+            }
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(0.5em, -0.5em);
+            }
+        }
+
+        & .hamburger-navigation {
+            transform: translateX(0);
+        }
+    }
+}
+
+.hamburger-inner {
+    display: block;
+    height: 100%;
+    cursor: pointer;
+}
+
+.hamburger-logo {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & span {
+        height: 0.25rem;
+        width: 100%;
+        background-color: $light-text-color;
+        border-radius: 3rem;
+
+        transform: scale(1) rotate(0) translate(0);
+        transition: transform 0.25s ease-in-out;
+    }
+}
+
+.hamburger-navigation {
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    top: var(--header-height);
+    left: 0;
+    background-color: $secondary-color;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+}
+.hamburger-navigation-inner {
+    margin: auto;
+
+    & .header-navigation-list {
+        flex-direction: column;
+        gap: 3rem;
+
+        & a {
+            font-size: 2rem !important;
+        }
+    }
+}
+
+// ========== HEADER :: RESPONSIVE ==========
 
 // ========== ========== ========== FOOTER ========== ========== ==========
 $footer-padding-size: 5rem;
@@ -391,6 +494,7 @@ $footer-padding-size: 5rem;
 // ========== Motivation ==========
 .motivation {
     color: $light-text-color;
+    text-align: center;
 }
 
 // ========== Last Cases ==========
@@ -429,6 +533,25 @@ $footer-padding-size: 5rem;
     }
 }
 
+@media (max-width: 1200px) {
+    .case-item {
+        flex: 1 33%;
+    }
+}
+
+@media (max-width: 900px) {
+    .case-item {
+        flex: 1 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .case-item-image {
+        img {
+            height: 16rem;
+        }
+    }
+}
 // ========== Approach ==========
 .approach-inner {
     display: flex;
@@ -566,7 +689,7 @@ $accordion-border-width: 0.1rem;
 // ========== ========== ========== PROJECTS ========== ========== ==========
 .projects-title {
     text-align: center;
-    margin-bottom: 6rem;
+    margin-bottom: var(--section-padding);
 }
 
 .all-cases-list {
@@ -574,6 +697,12 @@ $accordion-border-width: 0.1rem;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 0.6rem;
+}
+
+@media (max-width: 500px) {
+    .projects-title h1 {
+        font-size: 3.4rem;
+    }
 }
 
 // ========== ========== ========== CURRENT ITEM ========== ========== ==========

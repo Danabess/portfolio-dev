@@ -1,11 +1,19 @@
+import { useState } from "react"
 import { NavLink } from "react-router"
 
 import { WebSiteName } from "./App"
 
 import Navbar from "./components/Navbar"
+import Hamburger from "./components/Hamburger"
 
 
 export default function Header() {
+    const [windowSize, setWindowSize] = useState(window.innerWidth)
+    const Header = document.getElementById('header');
+
+    window.addEventListener("resize", () => {
+        setWindowSize(window.innerWidth)
+    })
 
     return (
         <header className="header main-background">
@@ -17,7 +25,11 @@ export default function Header() {
                 </div>
 
                 <div className="header-navigation">
-                    <Navbar />
+                    {
+                        windowSize > 900
+                            ? <Navbar />
+                            : <Hamburger />
+                    }
                 </div>
             </div>
         </header>
