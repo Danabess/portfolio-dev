@@ -30,6 +30,7 @@ $base-transition-timing: 0.25s;
 html {
     min-width: 320px;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 [class*="-container"] {
@@ -416,13 +417,22 @@ header {
 // ========== HEADER :: RESPONSIVE ==========
 
 // ========== ========== ========== FOOTER ========== ========== ==========
-$footer-padding-size: 5rem;
+:root {
+    --footer-padding: 5rem;
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --footer-padding: 2rem;
+    }
+}
+
 .footer-inner {
     color: $secondary-color;
     display: flex;
     justify-content: space-between;
-    padding-top: $footer-padding-size;
-    padding-bottom: $footer-padding-size;
+    padding-top: var(--footer-padding);
+    padding-bottom: var(--footer-padding);
 }
 
 .footer-links {
@@ -452,6 +462,48 @@ $footer-padding-size: 5rem;
     & p {
         margin-top: 3rem;
         color: $light-text-color;
+    }
+}
+
+@media (max-width: 900px) {
+    .footer-inner {
+        flex-direction: column;
+        gap: 5rem;
+
+        & .footer-links {
+            justify-content: space-around;
+            gap: 0;
+        }
+
+        & .footer-logo {
+            display: flex;
+            justify-content: end;
+            align-items: baseline;
+            gap: 1rem;
+
+            & p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-inner {
+        & .footer-links {
+            flex-direction: column;
+            align-self: center;
+            gap: 2rem;
+        }
+
+        & .footer-logo {
+            & h3 {
+                font-size: 1.5rem;
+            }
+            & p {
+                font-size: 0.8rem;
+            }
+        }
     }
 }
 

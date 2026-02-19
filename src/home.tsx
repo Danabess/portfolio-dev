@@ -13,13 +13,13 @@ import heroImg from "./assets/hero-main-img.jpg"
 export default function Home() {
     return (
         <>
-            {/* <section className="hero main-background">
+            <section className="hero main-background">
                 <div className="hero-inner hero-container">
                     <div className="hero-title">
                         <h1 className='light-heading'>
                             2D Animations. Video Editing. Motion Design.
                         </h1>
-                        <Link to='MyApproach' smooth={true} duration={1000}>
+                        <Link to='MyApproach'>
                             <Button ClassName='p2 uppercase' isPrimary>More About Approach</Button>
                         </Link>
                     </div>
@@ -27,15 +27,15 @@ export default function Home() {
                         <img src={heroImg} alt="HeroImage" />
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className='small-padding-section motivation secondary-background'>
+            <section className='small-padding-section motivation secondary-background'>
                 <div className="motivation-inner motivation-container">
                     <h3>“Every frame has purpose.Emotion through editing.Motion with meaning.”</h3>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className='last-cases'>
+            <section className='last-cases'>
                 <div className="last-cases-inner last-cases-container">
                     <div className="last-cases-title">
                         <h1>Last Cases</h1>
@@ -44,9 +44,9 @@ export default function Home() {
                         <LastCasesList />
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section id='MyApproach' className='approach secondary-background'>
+            <section id='MyApproach' className='approach secondary-background'>
                 <div className="approach-inner approach-container">
                     <div className="approach-title">
                         <h1>My <br /> Approach</h1>
@@ -59,18 +59,18 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className='workflow'>
+            <section className='workflow'>
                 <div className="workflow-inner workflow-container">
                     <h1 className='uppercase workflow-title'>My Workflow</h1>
                     <div className="workflow-content">
                         <Accordion />
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className="contact secondary-background">
+            <section className="contact secondary-background">
                 <div className="contact-inner contant-container">
                     <div className="contact-image">
                         <img src={heroImg} alt="ContactImage" />
@@ -85,7 +85,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </section> */}
+            </section>
         </>
     )
 }

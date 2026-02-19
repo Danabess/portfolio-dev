@@ -12,6 +12,7 @@
 html {
   min-width: 320px;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 [class*=-container] {
@@ -354,12 +355,21 @@ header {
   font-size: 2rem !important;
 }
 
+:root {
+  --footer-padding: 5rem;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --footer-padding: 2rem;
+  }
+}
 .footer-inner {
   color: rgb(240, 142, 128);
   display: flex;
   justify-content: space-between;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: var(--footer-padding);
+  padding-bottom: var(--footer-padding);
 }
 
 .footer-links {
@@ -387,6 +397,38 @@ header {
   color: rgb(255, 255, 255);
 }
 
+@media (max-width: 900px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .footer-inner .footer-links {
+    justify-content: space-around;
+    gap: 0;
+  }
+  .footer-inner .footer-logo {
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .footer-inner .footer-logo p {
+    margin: 0;
+  }
+}
+@media (max-width: 500px) {
+  .footer-inner .footer-links {
+    flex-direction: column;
+    align-self: center;
+    gap: 2rem;
+  }
+  .footer-inner .footer-logo h3 {
+    font-size: 1.5rem;
+  }
+  .footer-inner .footer-logo p {
+    font-size: 0.8rem;
+  }
+}
 .hero-inner {
   display: flex;
   gap: 1.25rem;

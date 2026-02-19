@@ -1,4 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router'
+import { useLayoutEffect } from 'react';
+
 
 import Header from './header';
 import Home from './home';
@@ -10,6 +12,14 @@ import CurrentItem from './CurrentItem';
 
 export const WebSiteName = "/portfolio-dev"
 
+const Wrapper = ({ children }: { children: any }) => {
+    const location = useLocation();
+    useLayoutEffect(() => {
+        document.documentElement.scrollTo(0, 0);
+    }, [location.pathname]);
+    return children
+}
+
 export default function App() {
     const location = useLocation();
     const hideFooter = [`${WebSiteName}/get-in-touch`].includes(location.pathname);
@@ -17,13 +27,15 @@ export default function App() {
     return (
         <>
             <Header></Header>
-            <Routes>
-                <Route path={`${WebSiteName}/home`} element={<Home />} />
-                <Route path={`${WebSiteName}/projects`} element={<Projects />} />
-                <Route path={`${WebSiteName}/projects/:video_id`} element={<CurrentItem />} />
-                <Route path={`${WebSiteName}/get-in-touch`} element={<GetInTouch />} />
-            </Routes>
-            {/* {!hideFooter && <Footer></Footer>} */}
+            <Wrapper>
+                <Routes>
+                    <Route path={`${WebSiteName}/home`} element={<Home />} />
+                    <Route path={`${WebSiteName}/projects`} element={<Projects />} />
+                    <Route path={`${WebSiteName}/projects/:video_id`} element={<CurrentItem />} />
+                    <Route path={`${WebSiteName}/get-in-touch`} element={<GetInTouch />} />
+                </Routes>
+            </Wrapper>
+            {!hideFooter && <Footer></Footer>}
         </>
     )
 }

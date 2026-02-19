@@ -9,7 +9,6 @@ import Hamburger from "./components/Hamburger"
 
 export default function Header() {
     const [windowSize, setWindowSize] = useState(window.innerWidth)
-    const Header = document.getElementById('header');
 
     window.addEventListener("resize", () => {
         setWindowSize(window.innerWidth)
