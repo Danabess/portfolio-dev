@@ -136,7 +136,7 @@ a {
         color: $dark-text-color;
 
         &::after {
-            height: 0.1rem;
+            height: 0.125rem;
             background-color: $dark-text-color;
             bottom: -0.375rem;
         }
@@ -819,13 +819,74 @@ $gap-size: 0.65rem;
 .current-item-links {
     display: flex;
     justify-content: space-between;
-    margin-top: 5rem;
-    padding: 0 10rem;
+    margin: 5rem 10rem 0;
+    padding: 0 20px;
+}
 
-    & .prev-link {
+.current-item-link {
+    position: relative;
+}
+
+@media (max-width: 1860px) {
+    .current-item-links {
+        max-width: 1520px;
+        margin: 5rem auto 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .current-item-about-title {
+        text-align: center;
+        margin: 4rem 0;
+    }
+    .about-content-block {
+        flex-wrap: wrap;
+    }
+    .current-item-links {
+        margin: 3rem auto 0;
+
+        & .next-link {
+            align-self: flex-end;
+        }
+
+        & h3 {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media (max-width: 625px) {
+    .current-item p {
+        font-size: 1rem;
     }
 
-    & .next-link {
+    .current-item-title {
+        text-align: center;
+        margin: $gap-size 0 1.5rem;
+
+        & h2 {
+            font-size: 2.4rem;
+        }
+    }
+
+    .current-item-about-title {
+        margin: 2rem 0;
+
+        & h1 {
+            font-size: 3.5rem;
+        }
+    }
+    .current-item-links {
+        flex-direction: column-reverse;
+        gap: 30px;
+
+        & div {
+            width: fit-content;
+        }
+
+        & .next-link {
+            align-self: flex-end;
+        }
     }
 }
 // ========== ========== ========== GET IN TOUCH ========== ========== ==========
