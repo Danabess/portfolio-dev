@@ -17,6 +17,7 @@ $base-transition-timing: 0.25s;
 
 :root {
     --section-padding: 6.25rem;
+    --small-section-padding: 3.15rem;
 }
 
 // ========== ========== ========== BASIC STYLE ========== ========== ==========
@@ -275,7 +276,7 @@ section {
     padding: var(--section-padding) 0;
 
     &.small-padding-section {
-        padding: 3.15rem 0;
+        padding: var(--small-section-padding) 0;
     }
 }
 
@@ -303,6 +304,18 @@ textarea {
 @media (max-width: 1200px) {
     :root {
         --section-padding: 3.25rem;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --small-section-padding: 2.1rem;
+    }
+}
+
+@media (max-width: 450px) {
+    :root {
+        --small-section-padding: 1.4rem;
     }
 }
 
@@ -510,15 +523,38 @@ header {
 // ========== ========== ========== HOME ========== ========== ==========
 
 // ========== Hero ==========
+.hero {
+    position: relative;
+    background: url("../assets/hero-back.png");
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        backdrop-filter: blur(10px);
+        z-index: 0;
+    }
+}
+
 .hero-inner {
     display: flex;
+    justify-content: center;
     gap: 1.25rem;
+    z-index: 10;
 }
 
 .hero-title {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 5rem;
+    text-align: center;
+    z-index: 10;
 
     & h1 {
         font-weight: 400 !important;
@@ -526,27 +562,46 @@ header {
 
     & a {
         position: relative;
-        z-index: 10;
     }
 }
 
-.hero-image {
-    display: flex;
-    width: 30%;
-    margin-right: 3.125rem;
-
-    & img {
-        height: 23.4rem;
-        width: 19.5rem;
-        object-fit: cover;
-        filter: grayscale(1);
+@media (max-width: 1230px) {
+    .hero-title h1 {
+        font-size: 3.5rem;
     }
 }
 
+@media (max-width: 900px) {
+    .hero-title {
+        max-width: 627px;
+    }
+}
+@media (max-width: 616px) {
+    .hero-title {
+        & h1 {
+            font-size: 2.3rem;
+        }
+        & .p2 {
+            font-size: 1rem;
+        }
+    }
+}
 // ========== Motivation ==========
 .motivation {
     color: $light-text-color;
     text-align: center;
+}
+
+@media (max-width: 900px) {
+    .motivation h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .motivation h3 {
+        font-size: 1rem;
+    }
 }
 
 // ========== Last Cases ==========
@@ -586,14 +641,32 @@ header {
 }
 
 @media (max-width: 1200px) {
+    .last-cases-title h1 {
+        font-size: 3.5rem;
+    }
+
+    .last-cases-list {
+        margin-top: 4.2rem;
+    }
+
     .case-item {
         flex: 1 33%;
     }
 }
 
 @media (max-width: 900px) {
+    .last-cases-list {
+        margin-top: 2.8rem;
+    }
+
     .case-item {
         flex: 1 50%;
+    }
+}
+
+@media (max-width: 616px) {
+    .last-cases-title h1 {
+        font-size: 2.3rem;
     }
 }
 
@@ -679,7 +752,7 @@ $accordion-border-width: 0.1rem;
         position: absolute;
         height: 0.125rem;
         width: 100%;
-        background-color: black;
+        background-color: $dark-text-color;
     }
     & .plus__vertical-line {
         transform: rotate(90deg);

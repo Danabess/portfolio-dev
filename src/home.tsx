@@ -13,7 +13,7 @@ import heroImg from "./assets/hero-main-img.jpg"
 export default function Home() {
     return (
         <>
-            {/* <section className="hero main-background">
+            <section className="hero main-background">
                 <div className="hero-inner hero-container">
                     <div className="hero-title">
                         <h1 className='light-heading'>
@@ -23,19 +23,17 @@ export default function Home() {
                             <Button ClassName='p2 uppercase' isPrimary>More About Approach</Button>
                         </Link>
                     </div>
-                    <div className="hero-image">
-                        <img src={heroImg} alt="HeroImage" />
-                    </div>
+                    <span></span>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className='small-padding-section motivation secondary-background'>
+            <section className='small-padding-section motivation secondary-background'>
                 <div className="motivation-inner motivation-container">
                     <h3>“Every frame has purpose.Emotion through editing.Motion with meaning.”</h3>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className='last-cases'>
+            <section className='last-cases'>
                 <div className="last-cases-inner last-cases-container">
                     <div className="last-cases-title">
                         <h1>Last Cases</h1>
@@ -44,7 +42,7 @@ export default function Home() {
                         <LastCasesList />
                     </div>
                 </div>
-            </section> */}
+            </section>
 
             {/* <section id='MyApproach' className='approach secondary-background'>
                 <div className="approach-inner approach-container">
