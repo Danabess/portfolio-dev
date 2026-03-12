@@ -1,8 +1,30 @@
 :root {
   --section-padding: 6.25rem;
   --small-section-padding: 3.15rem;
+  --h1-font-size: 5.2rem;
+  --h2-font-size: 3.6rem;
+  --h3-font-size: 2.2rem;
+  --h4-font-size: 1.4rem;
+  --p1-font-size: 1.5rem;
+  --p2-font-size: 1.2rem;
+  --p3-font-size: 0.9rem;
 }
 
+@media (max-width: 1200px) {
+  :root {
+    --h1-font-size: 3.5rem;
+  }
+}
+@media (max-width: 900px) {
+  :root {
+    --p2-font-size: 1rem;
+  }
+}
+@media (max-width: 616px) {
+  :root {
+    --h1-font-size: 2.3rem;
+  }
+}
 *,
 *::before,
 *::after {
@@ -32,20 +54,20 @@ body:has(.hamburger-menu.open) {
 }
 
 h1 {
-  font-size: 5.2rem;
+  font-size: var(--h1-font-size);
   font-weight: 700 !important;
 }
 
 h2 {
-  font-size: 3.6rem;
+  font-size: var(--h2-font-size);
 }
 
 h3 {
-  font-size: 2.2rem;
+  font-size: var(--h3-font-size);
 }
 
 h4 {
-  font-size: 1.4rem;
+  font-size: var(--h4-font-size);
 }
 
 h1,
@@ -63,15 +85,15 @@ h1.light-heading {
 }
 
 .p1 {
-  font-size: 1.5rem;
+  font-size: var(--p1-font-size);
 }
 
 .p2 {
-  font-size: 1.2rem;
+  font-size: var(--p2-font-size);
 }
 
 .p3 {
-  font-size: 0.9rem;
+  font-size: var(--p3-font-size);
 }
 
 .p1,
@@ -479,20 +501,12 @@ header {
   position: relative;
 }
 
-@media (max-width: 1230px) {
-  .hero-title h1 {
-    font-size: 3.5rem;
-  }
-}
 @media (max-width: 900px) {
   .hero-title {
     max-width: 627px;
   }
 }
 @media (max-width: 616px) {
-  .hero-title h1 {
-    font-size: 2.3rem;
-  }
   .hero-title .p2 {
     font-size: 1rem;
   }
@@ -544,9 +558,6 @@ header {
 }
 
 @media (max-width: 1200px) {
-  .last-cases-title h1 {
-    font-size: 3.5rem;
-  }
   .last-cases-list {
     margin-top: 4.2rem;
   }
@@ -560,11 +571,6 @@ header {
   }
   .case-item {
     flex: 1 50%;
-  }
-}
-@media (max-width: 616px) {
-  .last-cases-title h1 {
-    font-size: 2.3rem;
   }
 }
 @media (max-width: 500px) {
@@ -584,21 +590,55 @@ header {
   width: 60%;
 }
 .approach-inner div h1 {
-  display: flex;
-  justify-self: flex-end;
+  width: -moz-min-content;
+  width: min-content;
+  justify-self: end;
 }
 .approach-inner div p {
   margin-top: 5.3rem;
   max-width: 85%;
 }
 
+@media (max-width: 1200px) {
+  .approach-inner div p {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1050px) {
+  .approach-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .approach-inner div p {
+    margin-top: 1rem;
+  }
+  .approach-inner .approach-title h1 {
+    width: -moz-max-content;
+    width: max-content;
+    justify-self: center;
+  }
+  .approach-inner div:first-child, .approach-inner div:last-child {
+    width: 80%;
+  }
+}
+@media (max-width: 900px) {
+  .approach-inner div p {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 616px) {
+  .approach-inner div:first-child, .approach-inner div:last-child {
+    width: 100%;
+  }
+}
 .workflow-title {
   text-align: center;
   margin-bottom: 5rem;
 }
 
 .accordion-items-list {
-  list-style: decimal;
+  padding: 0 1rem;
 }
 
 .accordion-item {
@@ -620,6 +660,9 @@ header {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+}
+.accordion-item__title h3 {
+  max-width: 80%;
 }
 
 .accordion-plus {
@@ -653,6 +696,17 @@ header {
   margin: 1.25rem auto;
 }
 
+@media (max-width: 900px) {
+  .workflow-title {
+    margin-bottom: 2.5rem;
+  }
+  .accordion-item__title h3 {
+    font-size: 1.5rem;
+  }
+  .accordion-item-wrapper .p1 {
+    font-size: 1rem;
+  }
+}
 .contact-inner {
   display: flex;
 }
@@ -687,6 +741,25 @@ header {
   margin: 2rem 0 3rem;
 }
 
+@media (max-width: 900px) {
+  .contact-inner {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+  .contact-inner .contact-content, .contact-inner .contact-image {
+    width: 100%;
+  }
+}
+@media (max-width: 616px) {
+  .contact-text p {
+    margin: 2rem 0;
+  }
+}
+@media (max-width: 392px) {
+  .contact-image img {
+    width: 100%;
+  }
+}
 .projects-title {
   text-align: center;
   margin-bottom: var(--section-padding);
@@ -699,11 +772,6 @@ header {
   gap: 0.6rem;
 }
 
-@media (max-width: 500px) {
-  .projects-title h1 {
-    font-size: 3.4rem;
-  }
-}
 .current-item img {
   width: 100%;
   max-height: 40.5rem;
@@ -802,9 +870,6 @@ header {
   }
   .current-item-about-title {
     margin: 2rem 0;
-  }
-  .current-item-about-title h1 {
-    font-size: 3.5rem;
   }
   .current-item-links {
     flex-direction: column-reverse;

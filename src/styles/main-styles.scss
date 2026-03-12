@@ -18,6 +18,33 @@ $base-transition-timing: 0.25s;
 :root {
     --section-padding: 6.25rem;
     --small-section-padding: 3.15rem;
+
+    --h1-font-size: 5.2rem;
+    --h2-font-size: 3.6rem;
+    --h3-font-size: 2.2rem;
+    --h4-font-size: 1.4rem;
+
+    --p1-font-size: 1.5rem;
+    --p2-font-size: 1.2rem;
+    --p3-font-size: 0.9rem;
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --h1-font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --p2-font-size: 1rem;
+    }
+}
+
+@media (max-width: 616px) {
+    :root {
+        --h1-font-size: 2.3rem;
+    }
 }
 
 // ========== ========== ========== BASIC STYLE ========== ========== ==========
@@ -52,17 +79,17 @@ body {
 }
 
 h1 {
-    font-size: 5.2rem;
+    font-size: var(--h1-font-size);
     font-weight: 700 !important;
 }
 h2 {
-    font-size: 3.6rem;
+    font-size: var(--h2-font-size);
 }
 h3 {
-    font-size: 2.2rem;
+    font-size: var(--h3-font-size);
 }
 h4 {
-    font-size: 1.4rem;
+    font-size: var(--h4-font-size);
 }
 h1,
 h2,
@@ -78,13 +105,13 @@ h1.light-heading {
 }
 
 .p1 {
-    font-size: 1.5rem;
+    font-size: var(--p1-font-size);
 }
 .p2 {
-    font-size: 1.2rem;
+    font-size: var(--p2-font-size);
 }
 .p3 {
-    font-size: 0.9rem;
+    font-size: var(--p3-font-size);
 }
 .p1,
 .p2,
@@ -566,9 +593,6 @@ header {
 }
 
 @media (max-width: 1230px) {
-    .hero-title h1 {
-        font-size: 3.5rem;
-    }
 }
 
 @media (max-width: 900px) {
@@ -578,14 +602,12 @@ header {
 }
 @media (max-width: 616px) {
     .hero-title {
-        & h1 {
-            font-size: 2.3rem;
-        }
         & .p2 {
             font-size: 1rem;
         }
     }
 }
+
 // ========== Motivation ==========
 .motivation {
     color: $light-text-color;
@@ -641,10 +663,6 @@ header {
 }
 
 @media (max-width: 1200px) {
-    .last-cases-title h1 {
-        font-size: 3.5rem;
-    }
-
     .last-cases-list {
         margin-top: 4.2rem;
     }
@@ -665,9 +683,6 @@ header {
 }
 
 @media (max-width: 616px) {
-    .last-cases-title h1 {
-        font-size: 2.3rem;
-    }
 }
 
 @media (max-width: 500px) {
@@ -693,12 +708,59 @@ header {
 
     & div {
         & h1 {
-            display: flex;
-            justify-self: flex-end;
+            width: min-content;
+            justify-self: end;
         }
         & p {
             margin-top: 5.3rem;
             max-width: 85%;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .approach-inner div {
+        & p {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+    .approach-inner {
+        flex-direction: column;
+        align-items: center;
+
+        & div p {
+            margin-top: 1rem;
+        }
+
+        & .approach-title h1 {
+            width: max-content;
+            justify-self: center;
+        }
+
+        & div:first-child,
+        & div:last-child {
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .approach-inner div {
+        & p {
+            max-width: 100%;
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: 616px) {
+    .approach-inner {
+        & div:first-child,
+        & div:last-child {
+            width: 100%;
         }
     }
 }
@@ -710,7 +772,7 @@ header {
 }
 
 .accordion-items-list {
-    list-style: decimal;
+    padding: 0 1rem;
 }
 
 $accordion-border-width: 0.1rem;
@@ -738,6 +800,10 @@ $accordion-border-width: 0.1rem;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+
+    & h3 {
+        max-width: 80%;
+    }
 }
 
 .accordion-plus {
@@ -771,6 +837,24 @@ $accordion-border-width: 0.1rem;
         & p {
             width: 90%;
             margin: 1.25rem auto;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .workflow-title {
+        margin-bottom: 2.5rem;
+    }
+
+    .accordion-item__title {
+        & h3 {
+            font-size: 1.5rem;
+        }
+    }
+
+    .accordion-item-wrapper {
+        & .p1 {
+            font-size: 1rem;
         }
     }
 }
@@ -811,6 +895,33 @@ $accordion-border-width: 0.1rem;
     }
 }
 
+@media (max-width: 900px) {
+    .contact-inner {
+        flex-direction: column-reverse;
+        gap: 3rem;
+
+        & .contact-content,
+        & .contact-image {
+            width: 100%;
+        }
+    }
+
+    .contact-image {
+    }
+}
+
+@media (max-width: 616px) {
+    .contact-text p {
+        margin: 2rem 0;
+    }
+}
+
+@media (max-width: 392px) {
+    .contact-image img {
+        width: 100%;
+    }
+}
+
 // ========== ========== ========== PROJECTS ========== ========== ==========
 .projects-title {
     text-align: center;
@@ -825,9 +936,6 @@ $accordion-border-width: 0.1rem;
 }
 
 @media (max-width: 500px) {
-    .projects-title h1 {
-        font-size: 3.4rem;
-    }
 }
 
 // ========== ========== ========== CURRENT ITEM ========== ========== ==========
@@ -944,10 +1052,6 @@ $gap-size: 0.65rem;
 
     .current-item-about-title {
         margin: 2rem 0;
-
-        & h1 {
-            font-size: 3.5rem;
-        }
     }
     .current-item-links {
         flex-direction: column-reverse;

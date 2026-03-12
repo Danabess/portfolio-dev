@@ -44,10 +44,10 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* <section id='MyApproach' className='approach secondary-background'>
+            <section id='MyApproach' className='approach secondary-background'>
                 <div className="approach-inner approach-container">
                     <div className="approach-title">
-                        <h1>My <br /> Approach</h1>
+                        <h1>My Approach</h1>
                     </div>
 
                     <div className="approach-subtitle">
@@ -57,18 +57,18 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className='workflow'>
+            <section className='workflow'>
                 <div className="workflow-inner workflow-container">
                     <h1 className='uppercase workflow-title'>My Workflow</h1>
                     <div className="workflow-content">
                         <Accordion />
                     </div>
                 </div>
-            </section> */}
+            </section>
 
-            {/* <section className="contact secondary-background">
+            <section className="contact secondary-background">
                 <div className="contact-inner contant-container">
                     <div className="contact-image">
                         <img src={heroImg} alt="ContactImage" />
@@ -83,7 +83,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </section> */}
+            </section>
         </>
     )
 }
