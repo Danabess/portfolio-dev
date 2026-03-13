@@ -314,6 +314,7 @@ textarea {
     border: 0.1rem solid $input-border-color;
     outline: none;
     width: 100%;
+    box-sizing: border-box;
     background-color: $input-background-color;
     font-family: $paragraphs-font;
 
@@ -905,9 +906,6 @@ $accordion-border-width: 0.1rem;
             width: 100%;
         }
     }
-
-    .contact-image {
-    }
 }
 
 @media (max-width: 616px) {
@@ -1076,7 +1074,8 @@ $gap-size: 0.65rem;
     width: 50%;
 
     & h2 {
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
+        font-weight: 400 !important;
     }
 }
 
@@ -1119,5 +1118,51 @@ $gap-size: 0.65rem;
 .getintouch-links-list {
     & li:not(:last-child) {
         margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .getintouch-inner {
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .getintouch-form,
+    .getintouch-links {
+        width: 100%;
+    }
+
+    .getintouch-form {
+        & form {
+            width: 100%;
+        }
+    }
+
+    .getintouch-form-inner,
+    .getintouch-links-inner {
+        width: 100%;
+    }
+}
+
+@media (max-width: 616px) {
+    .getintouch-inner {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .getintouch-form h2,
+    .getintouch-links h2 {
+        font-size: 2.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .getintouch-links-inner {
+        & div:first-child {
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    .getintouch-link.p1 {
+        font-size: 1.2rem;
     }
 }

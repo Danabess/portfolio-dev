@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { NavLink } from "react-router"
 
 import { WebSiteName } from "./App"
@@ -10,9 +10,17 @@ import Hamburger from "./components/Hamburger"
 export default function Header() {
     const [windowSize, setWindowSize] = useState(window.innerWidth)
 
-    window.addEventListener("resize", () => {
-        setWindowSize(window.innerWidth)
-    })
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowSize(window.innerWidth)
+        }
+
+        window.addEventListener("resize", handleResize)
+
+        return () => {
+            window.removeEventListener("resize", handleResize)
+        }
+    }, [])
 
     return (
         <header className="header main-background">
