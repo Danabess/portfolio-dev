@@ -1,0 +1,366 @@
+@use 'variables' as *;
+
+// ========== Hero ==========
+.hero {
+    position: relative;
+    background: url("../../assets/hero-main-img.jpg");
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        backdrop-filter: blur(10px);
+        z-index: 0;
+    }
+}
+
+.hero-inner {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    z-index: 10;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    text-align: center;
+    z-index: 10;
+
+    & h1 {
+        font-weight: 400 !important;
+    }
+
+    & a {
+        position: relative;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-title {
+        max-width: 627px;
+    }
+}
+@media (max-width: 616px) {
+    .hero-title {
+        & .p2 {
+            font-size: 1rem;
+        }
+    }
+}
+
+// ========== Motivation ==========
+.motivation {
+    color: $light-text-color;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .motivation h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .motivation h3 {
+        font-size: 1rem;
+    }
+}
+
+// ========== Last Cases ==========
+.last-cases-list {
+    margin-top: 6.3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.case-item {
+    flex: 1 25%;
+    padding: 1rem;
+}
+
+.case-item-image {
+    max-width: inherit;
+
+    img {
+        width: 100%;
+        height: 24rem;
+        object-fit: cover;
+    }
+}
+
+.case-item-content {
+    & h4 {
+        font-weight: 500 !important;
+    }
+
+    & .title-margin {
+        margin-top: 1.25rem;
+    }
+
+    & .paragraph-margin {
+        margin: 1.25rem 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .last-cases-list {
+        margin-top: 4.2rem;
+    }
+
+    .case-item {
+        flex: 1 33%;
+    }
+}
+
+@media (max-width: 900px) {
+    .last-cases-list {
+        margin-top: 2.8rem;
+    }
+
+    .case-item {
+        flex: 1 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .case-item-image {
+        img {
+            height: 16rem;
+        }
+    }
+}
+
+// ========== Approach ==========
+.approach-inner {
+    display: flex;
+    color: $light-text-color;
+    gap: 2.5rem;
+
+    $title-width: 40;
+    & div:first-child {
+        width: percentage($title-width / 100);
+    }
+    & div:last-child {
+        width: percentage(calc((100 - $title-width) / 100));
+    }
+
+    & div {
+        & h1 {
+            width: min-content;
+            justify-self: end;
+        }
+        & p {
+            margin-top: 5.3rem;
+            max-width: 85%;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .approach-inner div {
+        & p {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+    .approach-inner {
+        flex-direction: column;
+        align-items: center;
+
+        & div p {
+            margin-top: 1rem;
+        }
+
+        & .approach-title h1 {
+            width: max-content;
+            justify-self: center;
+        }
+
+        & div:first-child,
+        & div:last-child {
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .approach-inner div {
+        & p {
+            max-width: 100%;
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: 616px) {
+    .approach-inner {
+        & div:first-child,
+        & div:last-child {
+            width: 100%;
+        }
+    }
+}
+
+// ========== Workflow ==========
+.workflow-title {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.accordion-items-list {
+    padding: 0 1rem;
+}
+
+$accordion-border-width: 0.1rem;
+.accordion-item {
+    border-top: $accordion-border-width solid;
+    padding: 1rem 0;
+
+    &:last-child {
+        border-bottom: $accordion-border-width solid;
+    }
+
+    &.open {
+        & .accordion-item__content {
+            grid-template-rows: 1fr;
+        }
+
+        & .plus__vertical-line {
+            transform: rotate(0deg);
+        }
+    }
+}
+
+.accordion-item__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    & h3 {
+        max-width: 80%;
+    }
+}
+
+.accordion-plus {
+    position: relative;
+    display: flex;
+    width: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    & .plus__horizontal-line,
+    & .plus__vertical-line {
+        position: absolute;
+        height: 0.125rem;
+        width: 100%;
+        background-color: $dark-text-color;
+    }
+    & .plus__vertical-line {
+        transform: rotate(90deg);
+        transition: transform $base-transition-timing ease-in-out;
+    }
+}
+
+.accordion-item__content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows $base-transition-timing ease-out;
+
+    & .accordion-item-wrapper {
+        overflow: hidden;
+
+        & p {
+            width: 90%;
+            margin: 1.25rem auto;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .workflow-title {
+        margin-bottom: 2.5rem;
+    }
+
+    .accordion-item__title {
+        & h3 {
+            font-size: 1.5rem;
+        }
+    }
+
+    .accordion-item-wrapper {
+        & .p1 {
+            font-size: 1rem;
+        }
+    }
+}
+
+// ========== Contact (Home section) ==========
+.contact-inner {
+    display: flex;
+}
+
+.contact-image {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+        height: 80%;
+        width: 22rem;
+        object-fit: cover;
+        filter: grayscale(1);
+    }
+}
+
+.contact-content {
+    color: $light-text-color;
+    display: flex;
+    width: 50%;
+}
+
+.contact-text {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    z-index: 10;
+
+    & p {
+        margin: 2rem 0 3rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-inner {
+        flex-direction: column-reverse;
+        gap: 3rem;
+
+        & .contact-content,
+        & .contact-image {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 616px) {
+    .contact-text p {
+        margin: 2rem 0;
+    }
+}
+
+@media (max-width: 392px) {
+    .contact-image img {
+        width: 100%;
+    }
+}

@@ -4,6 +4,9 @@ import { BrowserRouter } from 'react-router';
 
 import App from './App'
 
+export const WebSiteName = "/portfolio-dev"
+
+
 
 import "./styles/main-styles.css"
 
@@ -12,7 +15,7 @@ const ROOT = document.getElementById('root');
 
 createRoot(ROOT!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={WebSiteName}>
       <App />
     </BrowserRouter>
   </StrictMode>,

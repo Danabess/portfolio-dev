@@ -1,0 +1,108 @@
+@use 'variables' as *;
+
+:root {
+    --header-height: 6rem;
+}
+@media (max-width: 1200px) {
+    :root {
+        --header-height: 4rem;
+    }
+}
+
+header {
+    position: sticky;
+    height: var(--header-height);
+    top: 0;
+    z-index: 9999;
+}
+
+.header * {
+    color: $light-text-color;
+}
+
+.header-inner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo h4 {
+    font-size: 1.6rem !important;
+}
+
+.header-navigation-list {
+    display: flex;
+    gap: 6rem;
+}
+
+.hamburger-menu {
+    height: 1.625rem;
+    width: 2.5rem;
+
+    &.open {
+        & .hamburger-logo span {
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(0.5em, 0.4em);
+            }
+            &:nth-child(2) {
+                transform: scale(0);
+            }
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(0.5em, -0.5em);
+            }
+        }
+
+        & .hamburger-navigation {
+            transform: translateX(0);
+        }
+    }
+}
+
+.hamburger-inner {
+    display: block;
+    height: 100%;
+    cursor: pointer;
+}
+
+.hamburger-logo {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & span {
+        height: 0.25rem;
+        width: 100%;
+        background-color: $light-text-color;
+        border-radius: 3rem;
+
+        transform: scale(1) rotate(0) translate(0);
+        transition: transform 0.25s ease-in-out;
+    }
+}
+
+.hamburger-navigation {
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    top: var(--header-height);
+    left: 0;
+    background-color: $secondary-color;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+}
+.hamburger-navigation-inner {
+    margin: auto;
+
+    & .header-navigation-list {
+        flex-direction: column;
+        gap: 3rem;
+
+        & a {
+            font-size: 2rem !important;
+        }
+    }
+}

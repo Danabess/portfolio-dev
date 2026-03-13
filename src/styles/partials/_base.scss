@@ -1,0 +1,288 @@
+@use 'variables' as *;
+
+// ========== RESET ==========
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-width: 320px;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+[class*="-container"] {
+    max-width: $container-max-width + $container-side-padding * 2;
+    padding-right: $container-side-padding;
+    padding-left: $container-side-padding;
+    margin: 0 auto;
+}
+
+body {
+    &:has(.hamburger-menu.open) {
+        overflow: hidden;
+    }
+}
+
+// ========== UTILITIES ==========
+.uppercase {
+    text-transform: uppercase;
+}
+
+.main-background {
+    background-color: $main-color;
+}
+
+.secondary-background {
+    background-color: $secondary-color;
+}
+
+// ========== TYPOGRAPHY ==========
+h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 700 !important;
+}
+h2 {
+    font-size: var(--h2-font-size);
+}
+h3 {
+    font-size: var(--h3-font-size);
+}
+h4 {
+    font-size: var(--h4-font-size);
+}
+h1,
+h2,
+h3,
+h4 {
+    font-family: $headings-font;
+    font-weight: 400;
+    line-height: 1em;
+    letter-spacing: 0.01em;
+}
+h1.light-heading {
+    color: $light-text-color;
+}
+
+.p1 {
+    font-size: var(--p1-font-size);
+}
+.p2 {
+    font-size: var(--p2-font-size);
+}
+.p3 {
+    font-size: var(--p3-font-size);
+}
+.p1,
+.p2,
+.p3 {
+    font-family: $paragraphs-font;
+    font-weight: 400;
+    line-height: 1.6em;
+    letter-spacing: 0;
+}
+
+ul {
+    list-style: none;
+
+    & li {
+        overflow: hidden;
+    }
+}
+
+// ========== LINKS ==========
+a {
+    text-decoration: none;
+
+    &.header-link,
+    &.current-item-link {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0.01rem;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform $base-transition-timing ease-in-out;
+            background-color: $light-text-color;
+        }
+
+        &:hover::after {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        &.active::after {
+            transform: scaleX(1);
+        }
+    }
+
+    &.current-item-link {
+        color: $dark-text-color;
+
+        &::after {
+            height: 0.125rem;
+            background-color: $dark-text-color;
+            bottom: -0.375rem;
+        }
+    }
+
+    &.footer-link,
+    &.getintouch-link {
+        $footer-transition-timing: calc($base-transition-timing - 0.15s);
+
+        position: relative;
+        color: $secondary-color;
+        transition: color $footer-transition-timing ease-in-out;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0.01rem;
+            background-color: $secondary-color;
+            transition: background-color $footer-transition-timing ease-in-out;
+        }
+
+        &:hover {
+            color: $light-text-color;
+        }
+
+        &:hover::after {
+            background-color: $light-text-color;
+        }
+    }
+
+    &.getintouch-link {
+        &:hover {
+            color: $dark-text-color;
+        }
+
+        &:hover::after {
+            background-color: $dark-text-color;
+        }
+    }
+}
+
+// ========== BUTTONS ==========
+button {
+    position: relative;
+    font-family: $paragraphs-font;
+    padding: 1.2em 2.5em;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 3rem;
+    overflow: hidden;
+    line-height: 1 !important;
+
+    $button-border-width: 0.15rem;
+    &.primary-btn,
+    &.secondary-btn {
+        &,
+        &::before {
+            transition: all $base-transition-timing ease-in-out;
+        }
+
+        &::before {
+            box-sizing: border-box;
+            content: "";
+            position: absolute;
+            border: $button-border-width solid;
+            border-radius: 3rem;
+            left: 0;
+            bottom: -100%;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        &:hover::before {
+            bottom: 0;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: $button-border-width solid;
+            border-radius: 3rem;
+            box-sizing: border-box;
+        }
+    }
+
+    &.primary-btn {
+        color: $secondary-color;
+
+        &::before {
+            background-color: $secondary-color;
+            border-color: $secondary-color;
+        }
+
+        &:hover {
+            color: $light-text-color;
+        }
+
+        &::after {
+            border-color: $secondary-color;
+        }
+    }
+    &.secondary-btn {
+        color: $light-text-color;
+
+        &::before {
+            background-color: $light-text-color;
+            border-color: $light-text-color;
+        }
+
+        &:hover {
+            color: $secondary-color;
+        }
+
+        &::after {
+            border-color: $light-text-color;
+        }
+    }
+}
+
+// ========== SECTIONS & FORMS ==========
+section {
+    padding: var(--section-padding) 0;
+
+    &.small-padding-section {
+        padding: var(--small-section-padding) 0;
+    }
+}
+
+input[type="text"],
+textarea {
+    padding: 0.8rem;
+    margin: 0;
+    border: 0.1rem solid $input-border-color;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: $input-background-color;
+    font-family: $paragraphs-font;
+
+    &:focus {
+        outline: 0.15rem solid $dark-text-color;
+        outline-offset: 0.15rem;
+    }
+}
+
+textarea {
+    resize: vertical;
+    max-height: 25vh;
+}

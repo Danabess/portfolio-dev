@@ -1,7 +1,6 @@
 import { Link } from 'react-scroll'
 import { NavLink } from 'react-router-dom'
 
-import { WebSiteName } from "./App"
 
 import Button from "./components/Button"
 import LastCasesList from './components/lastCasesList'
@@ -77,7 +76,7 @@ export default function Home() {
                         <div className="contact-text">
                             <h1>Get In Touch</h1>
                             <p className='p2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec dapibus orci. Cras maximus interdum est non interdum. Proin pellentesque posuere dolor eget iaculis. Mauris et massa elit. In malesuada.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec dapibus orci. Cras maximus interdum est non interdum. Proin pellentesque posuere dolor eget</p>
-                            <NavLink to={`${WebSiteName}/get-in-touch`}>
+                            <NavLink to={`/get-in-touch`}>
                                 <Button ClassName='p2'>Contact Me</Button>
                             </NavLink>
                         </div>

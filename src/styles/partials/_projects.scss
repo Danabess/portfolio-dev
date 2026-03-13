@@ -1,0 +1,12 @@
+// ========== Projects Page ==========
+.projects-title {
+    text-align: center;
+    margin-bottom: var(--section-padding);
+}
+
+.all-cases-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.6rem;
+}

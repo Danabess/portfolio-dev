@@ -13,16 +13,23 @@
 @media (max-width: 1200px) {
   :root {
     --h1-font-size: 3.5rem;
+    --section-padding: 3.25rem;
   }
 }
 @media (max-width: 900px) {
   :root {
     --p2-font-size: 1rem;
+    --small-section-padding: 2.1rem;
   }
 }
 @media (max-width: 616px) {
   :root {
     --h1-font-size: 2.3rem;
+  }
+}
+@media (max-width: 450px) {
+  :root {
+    --small-section-padding: 1.4rem;
   }
 }
 *,
@@ -51,6 +58,14 @@ body:has(.hamburger-menu.open) {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.main-background {
+  background-color: rgb(11, 13, 99);
+}
+
+.secondary-background {
+  background-color: rgb(240, 142, 128);
 }
 
 h1 {
@@ -173,14 +188,6 @@ a.getintouch-link:hover::after {
   background-color: rgb(0, 0, 0);
 }
 
-.main-background {
-  background-color: rgb(11, 13, 99);
-}
-
-.secondary-background {
-  background-color: rgb(240, 142, 128);
-}
-
 button {
   position: relative;
   font-family: "Space Mono", monospace;
@@ -276,21 +283,6 @@ textarea {
   max-height: 25vh;
 }
 
-@media (max-width: 1200px) {
-  :root {
-    --section-padding: 3.25rem;
-  }
-}
-@media (max-width: 900px) {
-  :root {
-    --small-section-padding: 2.1rem;
-  }
-}
-@media (max-width: 450px) {
-  :root {
-    --small-section-padding: 1.4rem;
-  }
-}
 :root {
   --header-height: 6rem;
 }
@@ -465,7 +457,7 @@ header {
 }
 .hero {
   position: relative;
-  background: url("../assets/hero-back.png");
+  background: url("../../assets/hero-main-img.jpg");
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
