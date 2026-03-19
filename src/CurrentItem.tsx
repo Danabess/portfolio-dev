@@ -23,7 +23,9 @@ export default function CurrentItem() {
             <div className="current-item-inner current-item-container">
                 <div className="current-item__main-info">
                     <div className="current-item-preview">
-                        <img src={video.content} alt="" />
+                        <div className="current-item-video">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&controls=0&playlist=dQw4w9WgXcQ&rel=0&modestbranding=1&playsinline=1" title="Youtube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                        </div>
                     </div>
                     <div className="current-item-intro">
                         <div className="current-item-title">

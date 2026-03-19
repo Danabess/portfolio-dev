@@ -2,11 +2,11 @@
 // All styles are organized into partials in src/styles/partials/
 // Edit the relevant partial file instead of this file.
 
-@use 'partials/variables';
-@use 'partials/base';
-@use 'partials/header';
-@use 'partials/footer';
-@use 'partials/home';
-@use 'partials/projects';
-@use 'partials/current-item';
-@use 'partials/get-in-touch';
+@use "partials/variables";
+@use "partials/base";
+@use "partials/header";
+@use "partials/footer";
+@use "partials/home";
+@use "partials/projects";
+@use "partials/current-item";
+@use "partials/get-in-touch";

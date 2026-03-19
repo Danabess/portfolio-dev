@@ -1,9 +1,9 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 // ========== Hero ==========
 .hero {
     position: relative;
-    background: url("../../assets/hero-main-img.jpg");
+    background: url("../assets/hero-back.jpg");
     background-position: 50%;
     background-size: cover;
     background-repeat: no-repeat;

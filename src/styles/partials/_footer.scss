@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 :root {
     --footer-padding: 5rem;
@@ -46,6 +46,10 @@
         margin-top: 3rem;
         color: $light-text-color;
     }
+}
+
+.footerTest {
+    color: red;
 }
 
 @media (max-width: 900px) {
