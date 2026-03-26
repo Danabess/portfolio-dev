@@ -1,3 +1,4 @@
+import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 import { Link, useParams } from "react-router-dom"
 import { AllCases } from "./components/AllCases"
 
@@ -48,6 +49,9 @@ export default function CurrentItem() {
                 <div className="prev-link">
                     {prevVideo && (
                         <Link className="current-item-link" to={`/projects/${prevVideo.slug}`}>
+                            <span className="current-item-link-icon icon-prev">
+                                <SlArrowLeft />
+                            </span>
                             <h3>{prevVideo.title}</h3>
                         </Link>
                     )}
@@ -56,6 +60,9 @@ export default function CurrentItem() {
                     {nextVideo && (
                         <Link className="current-item-link" to={`/projects/${nextVideo.slug}`}>
                             <h3>{nextVideo.title}</h3>
+                            <span className="current-item-link-icon icon-next">
+                                <SlArrowRight />
+                            </span>
                         </Link>
                     )}
                 </div>

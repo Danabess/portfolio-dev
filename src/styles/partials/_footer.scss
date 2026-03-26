@@ -1,21 +1,11 @@
 @use "variables" as *;
 
-:root {
-    --footer-padding: 5rem;
-}
-
-@media (max-width: 1200px) {
-    :root {
-        --footer-padding: 2rem;
-    }
-}
-
 .footer-inner {
     color: $secondary-color;
     display: flex;
     justify-content: space-between;
-    padding-top: var(--footer-padding);
-    padding-bottom: var(--footer-padding);
+    padding-top: var(--small-section-padding);
+    padding-bottom: var(--small-section-padding);
 }
 
 .footer-links {
@@ -31,7 +21,7 @@
 
 .footer-contact-links {
     & div:not(:last-child) {
-        margin-bottom: 1.2rem;
+        margin-bottom: var(--gap-xs);
     }
 }
 
@@ -43,7 +33,7 @@
     }
 
     & p {
-        margin-top: 3rem;
+        margin-top: var(--gap-m);
         color: $light-text-color;
     }
 }
@@ -55,7 +45,7 @@
 @media (max-width: 900px) {
     .footer-inner {
         flex-direction: column;
-        gap: 5rem;
+        gap: var(--gap-xl);
 
         & .footer-links {
             justify-content: space-around;
@@ -66,7 +56,7 @@
             display: flex;
             justify-content: end;
             align-items: baseline;
-            gap: 1rem;
+            gap: var(--gap-xs);
 
             & p {
                 margin: 0;
@@ -75,12 +65,10 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 425px) {
     .footer-inner {
         & .footer-links {
-            flex-direction: column;
-            align-self: center;
-            gap: 2rem;
+            justify-content: space-between;
         }
 
         & .footer-logo {
@@ -90,6 +78,17 @@
             & p {
                 font-size: 0.8rem;
             }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .footer-contact-links,
+    .footer-social-links {
+        max-width: min-content;
+
+        & h4 {
+            max-width: min-content;
         }
     }
 }

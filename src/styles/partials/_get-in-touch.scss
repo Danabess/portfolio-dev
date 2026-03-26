@@ -8,7 +8,7 @@
     width: 50%;
 
     & h2 {
-        margin-bottom: 2.5rem;
+        margin-bottom: var(--gap-mx);
         font-weight: 400 !important;
     }
 }
@@ -27,11 +27,7 @@
 
 .form-item {
     &:not(:last-child) {
-        margin-bottom: 1.3rem;
-    }
-
-    & p {
-        padding-bottom: 0.3rem;
+        margin-bottom: var(--gap-xs);
     }
 
     & span {
@@ -40,25 +36,25 @@
 }
 
 .field-list {
-    margin-bottom: 1.3rem;
+    margin-bottom: var(--gap-xs);
 }
 
 .getintouch-links-inner {
     & div:first-child {
-        margin-bottom: 5rem;
+        margin-bottom: var(--gap-xl);
     }
 }
 
 .getintouch-links-list {
     & li:not(:last-child) {
-        margin-bottom: 0.5rem;
+        margin-bottom: var(--gap-xxs);
     }
 }
 
 @media (max-width: 1200px) {
     .getintouch-inner {
         flex-direction: column;
-        gap: 5rem;
+        gap: var(--gap-xl);
     }
 
     .getintouch-form,
@@ -79,21 +75,9 @@
 }
 
 @media (max-width: 616px) {
-    .getintouch-inner {
-        flex-direction: column;
-        gap: 2.5rem;
-    }
-
     .getintouch-form h2,
     .getintouch-links h2 {
         font-size: 2.4rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .getintouch-links-inner {
-        & div:first-child {
-            margin-bottom: 2.5rem;
-        }
     }
 
     .getintouch-link.p1 {

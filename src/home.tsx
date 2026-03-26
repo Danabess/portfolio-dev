@@ -34,7 +34,7 @@ export default function Home() {
 
             <section className='last-cases'>
                 <div className="last-cases-inner last-cases-container">
-                    <div className="last-cases-title">
+                    <div className="last-cases-title uppercase">
                         <h1>Last Cases</h1>
                     </div>
                     <div className="last-cases-content">
@@ -51,7 +51,8 @@ export default function Home() {
 
                     <div className="approach-subtitle">
                         <p className='p2'>
-                            I take a personal approach to every project, ensuring that I understand your brand, your audience, and your objectives. With data-driven insights, I enhance projects with research and strategy. <br /> <br />
+                            I take a personal approach to every project, ensuring that I understand your brand, your audience, and your objectives. With data-driven insights, I enhance projects with research and strategy. </p>
+                        <p className='p2'>
                             From brand identities to digital experiences, I create all types of work including campaigns, websites, and comprehensive brand systems. Whether it's a focused project or an extensive brand overhaul, I'm here to help.
                         </p>
                     </div>

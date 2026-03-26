@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 // ========== Current Item Page ==========
 .current-item {
     & .current-item-video {
@@ -23,7 +25,7 @@
 
 $gap-size: 0.65rem;
 .current-item-title {
-    margin: $gap-size 0 2.5rem;
+    margin: var(--gap-xs) 0 var(--gap-mx);
 
     & h2 {
         font-weight: bold;
@@ -31,7 +33,7 @@ $gap-size: 0.65rem;
 }
 
 .current-item-about-title {
-    margin: 7rem 0;
+    margin: var(--gap-xl) 0;
 
     & h1 {
         font-weight: 400 !important;
@@ -40,10 +42,10 @@ $gap-size: 0.65rem;
 
 .about-content-block {
     display: flex;
-    gap: $gap-size;
+    gap: var(--gap-xxs);
 
     &:not(:last-child) {
-        margin-bottom: 3.2rem;
+        margin-bottom: var(--gap-mx);
     }
 }
 
@@ -51,13 +53,13 @@ $gap-size: 0.65rem;
     flex: 1 30%;
 
     & .block-item-images {
-        margin-bottom: $gap-size;
+        margin-bottom: var(--gap-xxs);
     }
 }
 
 .split-images {
     display: flex;
-    gap: $gap-size;
+    gap: var(--gap-xxs);
     height: auto;
 
     & .split-images-item {
@@ -74,31 +76,44 @@ $gap-size: 0.65rem;
 .current-item-links {
     display: flex;
     justify-content: space-between;
-    margin: 5rem 10rem 0;
-    padding: 0 20px;
+    margin: var(--gap-xl) 10rem 0;
+    padding: 0 $container-side-padding;
+
+    & div a {
+        display: flex;
+    }
 }
 
 .current-item-link {
     position: relative;
+    gap: var(--gap-xxs);
+}
+
+.current-item-link-icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 1860px) {
     .current-item-links {
         max-width: 1520px;
-        margin: 5rem auto 0;
+        margin: var(--gap-xl) auto 0;
     }
 }
 
 @media (max-width: 900px) {
     .current-item-about-title {
         text-align: center;
-        margin: 4rem 0;
     }
     .about-content-block {
         flex-wrap: wrap;
     }
+    .block-item {
+        flex: 1 45%;
+    }
     .current-item-links {
-        margin: 3rem auto 0;
+        margin: var(--gap-xl) auto 0;
 
         & .next-link {
             align-self: flex-end;
@@ -107,6 +122,12 @@ $gap-size: 0.65rem;
         & h3 {
             font-size: 1.5rem;
         }
+    }
+    .current-item-link {
+        gap: calc(var(--gap-xxs) / 2);
+    }
+    .current-item-link-icon {
+        font-size: 1rem;
     }
 }
 
@@ -117,19 +138,19 @@ $gap-size: 0.65rem;
 
     .current-item-title {
         text-align: center;
-        margin: $gap-size 0 1.5rem;
 
         & h2 {
             font-size: 2.4rem;
         }
     }
 
-    .current-item-about-title {
-        margin: 2rem 0;
+    .block-item {
+        flex: 1 100%;
     }
+
     .current-item-links {
         flex-direction: column-reverse;
-        gap: 30px;
+        gap: var(--gap-s);
 
         & div {
             width: fit-content;

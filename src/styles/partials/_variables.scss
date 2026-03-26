@@ -31,12 +31,25 @@ $base-transition-timing: 0.25s;
     --p1-font-size: 1.5rem;
     --p2-font-size: 1.2rem;
     --p3-font-size: 0.9rem;
+
+    --gap-xl: 5rem;
+    --gap-mx: 3rem;
+    --gap-m: 3rem;
+    --gap-s: 2rem;
+    --gap-xs: 1.25rem;
+    --gap-xxs: 0.625rem;
 }
 
 @media (max-width: 1200px) {
     :root {
         --h1-font-size: 3.5rem;
         --section-padding: 3.25rem;
+    }
+}
+
+@media (max-width: 1050px) {
+    :root {
+        --gap-xl: 3.25rem;
     }
 }
 
@@ -50,6 +63,7 @@ $base-transition-timing: 0.25s;
 @media (max-width: 616px) {
     :root {
         --h1-font-size: 2.3rem;
+        --gap-mx: 1.5rem;
     }
 }
 

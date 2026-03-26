@@ -1,33 +1,88 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Button from "./components/Button";
 import FormItem from "./components/FormItem";
 import SocialLinksList from "./components/SocialLinksList";
-import Page404 from "./page404";
-import SuccessForm from "./successForm";
+
 
 
 export default function GetInTouch() {
+    const MessageStates = {
+        "btnOriginal": "Send Message",
+        "btnSuccess": "Message Sent",
+        "btnLoading": "Sending...",
+        "statusSuccess": "Message sent successfully!",
+        "statusFail": "Failed to send message!",
+        "statusError": "Something went wrong! Try again later."
+    }
+    const timeoutDelay = 3000;
+
     const [result, setResult] = useState("");
     const [inputName, setInputName] = useState("");
     const [inputEmail, setInputEmail] = useState("");
+    const [isDisabled, setIsDisabled] = useState(false)
+    const [submitBtnText, setSubmitBtnText] = useState(MessageStates.btnOriginal)
 
+    function FormReset(submitForm: HTMLFormElement) {
+        submitForm.reset()
+        setInputName("")
+        setInputEmail("")
+    }
 
     const onSubmit = async (event: any) => {
         event.preventDefault();
 
+        let sendingSuccess = false;
+
+        setIsDisabled(true);
+        setSubmitBtnText(MessageStates.btnLoading);
+
         const formData = new FormData(event.target);
         formData.append("access_key", "3136a2bf-ce4c-4ed5-9fa4-8aa55dcc4197");
 
-        const response = await fetch("https://api.web3forms.com/submit", {
+        await fetch("https://api.web3forms.com/submit", {
             method: "POST",
             body: formData
-        });
+        })
+            .then(
+                async (response) => {
+                    const data = await response.json();
 
-        const data = await response.json();
-        setResult(data.success ? "Success!" : "Error");
+                    if (data.success) {
+                        sendingSuccess = true
 
-        console.log(data.success)
+                        setTimeout(() => {
+                            setResult(MessageStates.statusSuccess)
+                            setSubmitBtnText(MessageStates.btnSuccess)
+                        }, timeoutDelay)
+                    } else {
+                        setTimeout(() => {
+                            setIsDisabled(false)
+                            setResult(MessageStates.statusFail)
+                            setSubmitBtnText(MessageStates.btnOriginal)
+                        }, timeoutDelay)
+                    }
+                })
+            .catch(
+                (error) => {
+                    console.log(error)
+
+                    setTimeout(() => {
+                        setIsDisabled(false)
+                        setSubmitBtnText(MessageStates.btnOriginal)
+                        setResult(MessageStates.statusError)
+                    }, timeoutDelay)
+                })
+            .then(
+                () => {
+                    setTimeout(() => {
+                        if (sendingSuccess) {
+                            FormReset(event.target)
+                        } else {
+                            setIsDisabled(false)
+                        }
+                    }, timeoutDelay)
+                });
     };
 
 
@@ -46,8 +101,8 @@ export default function GetInTouch() {
                             <input type="hidden" name="email" value="jesterbloods@gmail.com"></input>
                             <input type="hidden" name="subject" value="You recieved new message from your Portfolio webpage"></input>
                         </div>
-                        <Button type="submit" isPrimary ClassName="p2">Submit</Button>
-                        <p className="p2">{result}</p>
+                        <Button isDisabled={isDisabled} type="submit" isPrimary ClassName="p2">{submitBtnText}</Button>
+                        <p className="p2" style={{ paddingTop: "1rem" }}>{result}</p>
                     </form>
                 </div>
             </div>

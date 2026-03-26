@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 :root {
     --header-height: 6rem;
@@ -99,7 +99,7 @@ header {
 
     & .header-navigation-list {
         flex-direction: column;
-        gap: 3rem;
+        gap: var(--gap-m);
 
         & a {
             font-size: 2rem !important;
