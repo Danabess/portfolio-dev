@@ -86,7 +86,6 @@
 
 .case-item {
     flex: 1 25%;
-    padding: 0 1rem;
 }
 
 .case-item-image {
@@ -210,14 +209,10 @@
     margin-bottom: var(--gap-xl);
 }
 
-.accordion-items-list {
-    padding: 0 1rem;
-}
-
 $accordion-border-width: 0.1rem;
 .accordion-item {
     border-top: $accordion-border-width solid;
-    padding: 1rem 0;
+    padding: var(--gap-xs) 0;
 
     &:last-child {
         border-bottom: $accordion-border-width solid;
@@ -274,7 +269,7 @@ $accordion-border-width: 0.1rem;
         overflow: hidden;
 
         & p {
-            width: 90%;
+            padding: 0 4rem;
             margin: var(--gap-xs) auto;
         }
     }
@@ -287,10 +282,9 @@ $accordion-border-width: 0.1rem;
         }
     }
 
-    .accordion-item-wrapper {
-        & .p1 {
-            font-size: 1rem;
-        }
+    .accordion-item__content .accordion-item-wrapper p {
+        font-size: 1rem;
+        padding: 0 2.8rem;
     }
 }
 

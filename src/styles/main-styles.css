@@ -547,7 +547,6 @@ header {
 
 .case-item {
   flex: 1 25%;
-  padding: 0 1rem;
 }
 
 .case-item-image {
@@ -643,13 +642,9 @@ header {
   margin-bottom: var(--gap-xl);
 }
 
-.accordion-items-list {
-  padding: 0 1rem;
-}
-
 .accordion-item {
   border-top: 0.1rem solid;
-  padding: 1rem 0;
+  padding: var(--gap-xs) 0;
 }
 .accordion-item:last-child {
   border-bottom: 0.1rem solid;
@@ -698,7 +693,7 @@ header {
   overflow: hidden;
 }
 .accordion-item__content .accordion-item-wrapper p {
-  width: 90%;
+  padding: 0 4rem;
   margin: var(--gap-xs) auto;
 }
 
@@ -706,8 +701,9 @@ header {
   .accordion-item__title h3 {
     font-size: 1.5rem;
   }
-  .accordion-item-wrapper .p1 {
+  .accordion-item__content .accordion-item-wrapper p {
     font-size: 1rem;
+    padding: 0 2.8rem;
   }
 }
 .contact-inner {
@@ -780,7 +776,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  row-gap: var(--gap-s);
+  gap: var(--gap-s);
 }
 
 .current-item .current-item-video {
