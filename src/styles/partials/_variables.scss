@@ -8,20 +8,23 @@ $input-background-color: rgb(250, 250, 250);
 $input-border-color: rgb(169, 169, 169);
 
 // ========== LAYOUT ==========
-$container-max-width: 1280px;
-$container-side-padding: 30px;
+// $container-max-width: 1280px;
+// $container-side-padding: 30px;
 
 // ========== FONTS ==========
 $headings-font: "Space Grotesk", monospace;
 $paragraphs-font: "Space Mono", monospace;
 
 // ========== TRANSITIONS ==========
-$base-transition-timing: 0.25s;
+// $base-transition-timing: 0.25s;
 
 // ========== CSS CUSTOM PROPERTIES ==========
 :root {
     --section-padding: 6.25rem;
     --small-section-padding: 3.15rem;
+
+    --container-max-width: 1280px;
+    --container-side-padding: 40px;
 
     --h1-font-size: 5.2rem;
     --h2-font-size: 3.6rem;
@@ -38,6 +41,8 @@ $base-transition-timing: 0.25s;
     --gap-s: 2rem;
     --gap-xs: 1.25rem;
     --gap-xxs: 0.625rem;
+
+    --base-transition-timing: 0.25s;
 }
 
 @media (max-width: 1200px) {
@@ -50,6 +55,7 @@ $base-transition-timing: 0.25s;
 @media (max-width: 1050px) {
     :root {
         --gap-xl: 3.25rem;
+        --container-side-padding: 30px;
     }
 }
 
@@ -70,5 +76,6 @@ $base-transition-timing: 0.25s;
 @media (max-width: 450px) {
     :root {
         --small-section-padding: 1.4rem;
+        --container-side-padding: 20px;
     }
 }

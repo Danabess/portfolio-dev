@@ -15,9 +15,9 @@ html {
 }
 
 [class*="-container"] {
-    max-width: $container-max-width + $container-side-padding * 2;
-    padding-right: $container-side-padding;
-    padding-left: $container-side-padding;
+    max-width: calc(var(--container-max-width) + var(--container-side-padding) * 2);
+    padding-right: var(--container-side-padding);
+    padding-left: var(--container-side-padding);
     margin: 0 auto;
 }
 
@@ -110,7 +110,7 @@ a {
             height: 0.01rem;
             transform-origin: right;
             transform: scaleX(0);
-            transition: transform $base-transition-timing ease-in-out;
+            transition: transform var(--base-transition-timing) ease-in-out;
             background-color: $light-text-color;
         }
 
@@ -136,7 +136,7 @@ a {
 
     &.footer-link,
     &.getintouch-link {
-        $footer-transition-timing: calc($base-transition-timing - 0.15s);
+        $footer-transition-timing: calc(var(--base-transition-timing) - 0.15s);
 
         position: relative;
         color: $secondary-color;
@@ -190,7 +190,7 @@ button {
     &.secondary-btn {
         &,
         &::before {
-            transition: all $base-transition-timing ease-in-out;
+            transition: all var(--base-transition-timing) ease-in-out;
         }
 
         &::before {
