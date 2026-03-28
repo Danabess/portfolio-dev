@@ -58,9 +58,9 @@ html {
 }
 
 [class*=-container] {
-  max-width: 1360px;
-  padding-right: 40px;
-  padding-left: 40px;
+  max-width: 1340px;
+  padding-right: 30px;
+  padding-left: 30px;
   margin: 0 auto;
 }
 
@@ -845,7 +845,7 @@ header {
   display: flex;
   justify-content: space-between;
   margin: var(--gap-xl) 10rem 0;
-  padding: 0 40px;
+  padding: 0 30px;
 }
 .current-item-links div a {
   display: flex;
