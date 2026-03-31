@@ -1,1 +1,1 @@
-Nikita Sych Portfolio Website
+Portfolio Website
