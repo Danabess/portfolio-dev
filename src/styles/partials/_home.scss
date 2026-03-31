@@ -256,14 +256,14 @@ $accordion-border-width: 0.1rem;
     }
     & .plus__vertical-line {
         transform: rotate(90deg);
-        transition: transform $base-transition-timing ease-in-out;
+        transition: transform var(--base-transition-timing) ease-in-out;
     }
 }
 
 .accordion-item__content {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows $base-transition-timing ease-out;
+    transition: grid-template-rows var(--base-transition-timing) ease-out;
 
     & .accordion-item-wrapper {
         overflow: hidden;
