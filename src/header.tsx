@@ -26,7 +26,7 @@ export default function Header() {
             <div className="header-inner header-container">
                 <div className="header-logo">
                     <h4>
-                        <NavLink to={`/home`}>Nikita Sych</NavLink>
+                        <NavLink to={`/home`}>John Smith</NavLink>
                     </h4>
                 </div>
 

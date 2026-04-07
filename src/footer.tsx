@@ -23,7 +23,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="footer-logo">
-                    <h3>Nikita Sych</h3>
+                    <h3>John Smith</h3>
                     <p>@Coopyright 2026</p>
                 </div>
             </div>

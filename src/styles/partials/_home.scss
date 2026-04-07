@@ -288,6 +288,13 @@ $accordion-border-width: 0.1rem;
     }
 }
 
+@media (max-width: 650px) {
+    .accordion-item__content .accordion-item-wrapper p {
+        font-size: 1rem;
+        padding: 0 1.6rem;
+    }
+}
+
 // ========== Contact (Home section) ==========
 .contact-inner {
     display: flex;

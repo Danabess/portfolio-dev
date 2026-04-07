@@ -106,3 +106,19 @@ header {
         }
     }
 }
+
+// @keyframes hamburgerAnimation {
+//     from {
+//         transform: translateX(100%);
+//     }
+//     to {
+//         transform: translateX(0);
+//     }
+// }
+
+@media (max-width: 320px) {
+    .hamburger-navigation {
+        width: 320px;
+        transform: translateX(320px);
+    }
+}
