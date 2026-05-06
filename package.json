@@ -7,10 +7,10 @@
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
-    "deploy": "npm run build && wrangler deploy",
+    "deploy": "npm run build",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "npm run build && wrangler dev"
+    "preview": "npm run build"
   },
   "dependencies": {
     "react": "^19.2.0",
