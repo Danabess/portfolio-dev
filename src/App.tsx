@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router'
+import { Routes, Route, useLocation, Navigate } from 'react-router'
 import { useLayoutEffect } from 'react';
 import type { ReactNode } from 'react';
 
@@ -30,6 +30,7 @@ export default function App() {
             <Header></Header>
             <Wrapper>
                 <Routes>
+                    <Route path="/" element={<Navigate to="/home" />} />
                     <Route path={`/home`} element={<Home />} />
                     <Route path={`/projects`} element={<Projects />} />
                     <Route path={`/projects/:video_id`} element={<CurrentItem />} />
